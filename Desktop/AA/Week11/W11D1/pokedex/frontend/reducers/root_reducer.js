@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import entitiesReducer from "./pokemon_reducer";
-// import items from "./item_reducer";
+import entitiesReducer from "./entities_reducer";
+
 
 const rootReducer = combineReducers({
     entities: entitiesReducer
