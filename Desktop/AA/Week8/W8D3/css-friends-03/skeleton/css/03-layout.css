@@ -1,0 +1,23 @@
+/* PHASE 3: Layout */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 10px solid red;
+    
+}
+
+.content-sidebar {
+    min-height: 200px;
+    background-color:purple;
+    
+
+}
+
+.content-main {
+    min-height: 200px;
+    background-color: blue;
+    border-right: 10px solid red;
+}
+
+
