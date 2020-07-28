@@ -16,6 +16,13 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+
+  gem 'better_errors'
+gem 'binding_of_caller'
+gem 'pry-rails'
+gem 'annotate'
+gem 'bcrypt'
+gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -34,8 +41,12 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

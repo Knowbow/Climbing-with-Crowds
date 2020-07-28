@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const login = user => (
     $.ajax({
         method: 'POST',
@@ -10,7 +12,7 @@ export const signup = user => (
     $.ajax({
         method: 'POST',
         url: '/api/user',
-        data: { user }
+        data: { user },
     })
 )
 export const logout = () => (

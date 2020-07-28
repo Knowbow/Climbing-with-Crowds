@@ -19,13 +19,13 @@ export const createNewUser = formUser => dispatch => (
     ))
 )
 
-export const login = formuser => dispatch => (
-    APIUtil.login(user).then(user => (
+export const login = formUser => dispatch => (
+    APIUtil.login(formUser).then(user => (
         dispatch(receiveCurrentUser(user))
     ))
 )
 export const logout = () => dispatch => (
     APIUtil.logout().then(user => (
-        dispatch(logout())
+        dispatch(logoutCurrentUser())
     ))
 )
