@@ -5,6 +5,8 @@ import { Route } from 'react-router-dom';
 const App = () => (
     <div>
         <p>WORKING!!!!!</p>
+        
+        <Route path="/" component={SignupContainer} />
     </div>
 )
 

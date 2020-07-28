@@ -165,6 +165,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+console.log('hi');
+debugger;
 document.addEventListener('DOMContentLoaded', function () {
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   var root = document.getElementById('root');
