@@ -11,11 +11,12 @@ export default ({ currentUser, logout }) => {
             <div>
                 <Link className="btn" to="/signup">Sign Up</Link>
                 <Link className="btn" to="/login">Log In</Link>
+                <Link className="btn" to="/login">Demo</Link>
             </div>
         );
     return (
         <header className="nav-bar">
-            <h1 className="logo">Climbing Nav Bar</h1>
+            <Link className="logo" to="/">Climbing With Friends</Link>
             <div>
                 {display}
             </div>
