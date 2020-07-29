@@ -28,30 +28,32 @@ class Signup extends React.Component {
     render(){
         return (
             <div className="session-form">
-                <h2>Sign Up!!!!!</h2>
-                <form>
-                    <label>Name:
+                <h2>Join for climbing</h2>
+                <p>1000s of strangers across the world have climbed toge. Create an account and you'll be on your way to join the community</p>
+                <form className="wrapper">
+                    
                         <input 
                             type="text"
                             value={this.state.name}
                             onChange={this.handleInput('name')}
+                            placeholder="First name (or nickname)"
+                            className="session-form-sign"
                         />
-                    </label>
-                    <label>Email:
                         <input 
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
+                            placeholder="Email Address"
+                            className="session-form-sign"
                         />
-                    </label>
-                    <label>Password:
                         <input 
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
+                            placeholder="Password (at least 6 characters you won't forget!)"
+                            className="session-form-sign"
                         />
-                    </label>
-                    <button onClick={this.handleSubmit}>Sign UP</button>
+                    <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
                 </div>
         )
