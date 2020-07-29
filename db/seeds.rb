@@ -8,13 +8,13 @@
 
 User.delete_all
 
-u1 = User.create!(
+u1 = User.create(
     name: "Guest",
     email: "Guest",
     password: "gggggg"
 )
 
-u2 = User.create!(
+u2 = User.create(
     name: "eunji",
     email: "bee",
     password: "bbbbbb"
