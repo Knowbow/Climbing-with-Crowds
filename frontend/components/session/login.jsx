@@ -13,7 +13,7 @@ class Login extends React.Component {
 
     handleInput(type) {
         return (e) => {
-            this.setState({ [type]: e.currentTarget.value });
+            this.setState({ [type]: e.target.value });
         }
     }
 
@@ -35,13 +35,6 @@ class Login extends React.Component {
                             type="text"
                             value={this.state.name}
                             onChange={this.handleInput('name')}
-                        />
-                    </label>
-                    <label>Email:
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
                         />
                     </label>
                     <label>Password:
