@@ -32,6 +32,39 @@
      height: 400px;
      width: 100%;
  }
+
+ .intro{
+     float:left;
+     padding-right: 50px;
+     text-align: center;
+     color: orange;
+     font-size: 30px;
+     font-weight: bold;
+ }
+  .introl{
+     float:left;
+     padding-left: 250px;
+     padding-right: 50px;
+     text-align: center;
+     color: orange;
+     font-size: 30px;
+     font-weight: bold;
+ }
+ .intro1{
+     float:left;
+     padding-right: 30px;
+     text-align: center;
+     font-size: 20px;  
+     margin-top: -15px;
+ }
+ .intro1l{
+     float:left;
+     padding-left: 250px;
+     padding-right: 30px;
+     text-align: center;
+     font-size: 20px;  
+     margin-top: -15px;
+ }
  body{
      margin: 0px;
  }
