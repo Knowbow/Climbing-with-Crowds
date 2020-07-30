@@ -9,8 +9,21 @@ class Signup extends React.Component {
             password: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        
     }
     
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
+    renderErrors(){
+        
+        return(
+            <ul>
+                {this.props.errors}
+            </ul>
+        )
+    }
     handleInput(type){
         return (e) => {
             this.setState({[type]: e.currentTarget.value});
@@ -27,6 +40,8 @@ class Signup extends React.Component {
 
     render(){
         return (
+            <>
+                {this.renderErrors()}
             <div className="session-form">
                 <h2>Join for climbing</h2>
                 <p>1000s of strangers across the world have climbed toge. Create an account and you'll be on your way to join the community</p>
@@ -56,6 +71,7 @@ class Signup extends React.Component {
                     <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
                 </div>
+                </>
         )
     }
 }
