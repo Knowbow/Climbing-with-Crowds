@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["Wrong-User-Controller"], status: 422
+      render json: ["Does not meet signup conditions, please try again"], status: 422
     end
   end
 

@@ -11,6 +11,9 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         
     }
+    componentDidMount() {
+        this.props.clearErrors();
+    }
 
     handleInput(type) {
         return (e) => {
@@ -18,15 +21,26 @@ class Login extends React.Component {
         }
     }
 
+    renderErrors() {
+
+        return (
+            <ul>
+                {this.props.errors}
+            </ul>
+        )
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.login(user)
-            .then(()=> this.props.history.push('/'));
+        this.props.login(user);
+           // .then(()=> this.props.history.push('/'));
     }
 
     render() {
         return (
+            <>
+            { this.renderErrors() }
             <div className="session-form">
                 <h2>Hey stranger!</h2>
                 <p>It's good to have you back. Sign in here and sign up for your next climb!</p>
@@ -48,6 +62,7 @@ class Login extends React.Component {
                     <button onClick={this.handleSubmit}>Log In</button>
                 </form>
             </div>
+            </>
         )
     }
 }

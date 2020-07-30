@@ -4,8 +4,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Signup from './signup';
 
-const mstp = state => ({
-    errors: state.errors,
+const mstp = ({errors}) => ({
+    errors: errors.session,
 });
 
 const mdtp = dispatch => ({

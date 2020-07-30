@@ -652,6 +652,11 @@ var Login = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Login, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.clearErrors();
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;
@@ -661,20 +666,21 @@ var Login = /*#__PURE__*/function (_React$Component) {
       };
     }
   }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors);
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
-
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.login(user).then(function () {
-        return _this3.props.history.push('/');
-      });
+      this.props.login(user); // .then(()=> this.props.history.push('/'));
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup"
@@ -692,7 +698,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
-      }, "Log In")));
+      }, "Log In"))));
     }
   }]);
 
@@ -724,15 +730,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var mstp = function mstp(_ref) {
+  var errors = _ref.errors;
+  return {
+    errors: errors.session
+  };
+};
+
 var mdtp = function mdtp(dispatch) {
   return {
     login: function login(formUser) {
       return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_1__["login"])(formUser));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mdtp)(_login__WEBPACK_IMPORTED_MODULE_4__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_login__WEBPACK_IMPORTED_MODULE_4__["default"]));
 
 /***/ }),
 
@@ -879,9 +895,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mstp = function mstp(state) {
+var mstp = function mstp(_ref) {
+  var errors = _ref.errors;
   return {
-    errors: state.errors
+    errors: errors.session
   };
 };
 
@@ -936,7 +953,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  error: _error_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  errors: _error_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
