@@ -27,6 +27,11 @@
      
  }
 
+ .home{
+     background-color: orange;
+     height: 400px;
+     width: 100%;
+ }
  body{
      margin: 0px;
  }
