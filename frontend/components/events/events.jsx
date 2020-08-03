@@ -49,7 +49,7 @@ class Events extends React.Component {
     citiesEvents(){
         const seed = [
             {city_name: "San Francisco",
-            data:[
+            event_data:[
                 {
                     id: 1,
                     location_id: 1,
@@ -58,7 +58,21 @@ class Events extends React.Component {
                     date: "08/08/2020",
                     time: "2:00pm"
                 }
-                ]}
+                ]},
+            {
+                city_name: "New York",
+                event_data: [
+                    {
+                        id: 2,
+                        location_id: 2,
+                        host_id: 2,
+                        participant_id: 2,
+                        date: "08/09/2020",
+                        time: "3:00pm"
+                    }
+                ]
+            },
+
         ]
         const renderCities = seed.map(city => {
             return (
@@ -66,15 +80,44 @@ class Events extends React.Component {
                     <li>
                         {city.city_name}
                     </li>
+                    <br/>
+                    <li>
+                        {this.renderEventDetails(city)}
+                    </li>
                 </ul>
             )
         })
+
+             
         return (
-            <div>
-                {renderCities}
+            <div className="eventIndex-container">
+                <div className="cities">
+                    {renderCities}
+                </div>
+                
             </div>
+            
         )
     }
+    renderEventDetails(city) {
+        const cityDetails = city.event_data.map(details => {
+            return (
+                <ul key={city.city_name.length}>
+                    <li>
+                        {details.date}
+                    </li>
+                </ul>
+            )
+        })
+
+        return (
+            <div>
+                {cityDetails}
+            </div>
+        )
+
+    }  
+    
     render() {
 
         return (

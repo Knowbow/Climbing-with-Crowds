@@ -337,9 +337,11 @@ var Events = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "citiesEvents",
     value: function citiesEvents() {
+      var _this = this;
+
       var seed = [{
         city_name: "San Francisco",
-        data: [{
+        event_data: [{
           id: 1,
           location_id: 1,
           host_id: 1,
@@ -347,13 +349,37 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "08/08/2020",
           time: "2:00pm"
         }]
+      }, {
+        city_name: "New York",
+        event_data: [{
+          id: 2,
+          location_id: 2,
+          host_id: 2,
+          participant_id: 2,
+          date: "08/09/2020",
+          time: "3:00pm"
+        }]
       }];
       var renderCities = seed.map(function (city) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           key: city.city_name.length
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, city.city_name));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, city.city_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _this.renderEventDetails(city)));
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, renderCities);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "eventIndex-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cities"
+      }, renderCities));
+    }
+  }, {
+    key: "renderEventDetails",
+    value: function renderEventDetails(city) {
+      var cityDetails = city.event_data.map(function (details) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          key: city.city_name.length
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, details.date));
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, cityDetails);
     }
   }, {
     key: "render",
