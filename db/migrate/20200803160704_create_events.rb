@@ -11,6 +11,6 @@ class CreateEvents < ActiveRecord::Migration[5.2]
     end
     add_index :events, :location_id
     add_index :events, :host_id 
-    add_index :events, :participant_id,
+    add_index :events, :participant_id
   end
 end

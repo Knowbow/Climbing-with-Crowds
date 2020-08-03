@@ -55,9 +55,9 @@ class Events extends React.Component {
                     />
                 </div>
                 <div className="frontpage">
-                    <p className="intro-event">{this.intro()}</p>
-                    <p className="intro-event1">{this.body()}</p>
-                    <p>{this.cityList()}</p>
+                    {this.intro()}
+                    {this.body()}
+                    {this.cityList()}
                 </div>
             </>
         )
