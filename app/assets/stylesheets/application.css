@@ -165,4 +165,15 @@ form{
      color: #FF8C00;
  }
  
- @import "components/*"
+
+
+
+.events-title{
+    color: orange;
+
+}
+.events-container{
+    background-color: #f9f6e7;
+    height: 100%;
+    width: 100%;
+}
