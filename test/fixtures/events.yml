@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location_id: 1
+  host_id: 1
+  participant_id: 1
+  data: 2020-08-03 12:07:04
+  time: 2020-08-03 12:07:04
+
+two:
+  location_id: 1
+  host_id: 1
+  participant_id: 1
+  data: 2020-08-03 12:07:04
+  time: 2020-08-03 12:07:04

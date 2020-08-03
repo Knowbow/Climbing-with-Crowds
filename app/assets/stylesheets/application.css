@@ -22,15 +22,32 @@
      padding-top: 30px;
      padding-bottom: 30px;
      width: 100%;
+     margin: 0px;    
+ }
+
+  .footer-bar{
+     display: flex;
+     justify-content: space-between;
+     background-color: #F7BF4D;
+     color: white;
+     padding-top: 30px;
+     padding-bottom: 30px;
+     width: 100%;
      margin: 0px;
+     bottom:0px;
      
      
  }
 
+ .frontpage{
+     height: 300px;
+     width: 100%;
+ }
  .home{
      background-color: orange;
-     height: 400px;
+     height: 600px;
      width: 100%;
+     font: sans-serif;
  }
 
  .intro{
@@ -65,6 +82,10 @@
      font-size: 20px;  
      margin-top: -15px;
  }
+ .nav-right{
+     display:flex;
+     margin: 0px;
+ }
  body{
      margin: 0px;
  }
@@ -76,6 +97,20 @@
  }
  .btn:hover{
      cursor: pointer;
+ }
+
+.btn-logout{
+     margin-right:30px;
+     height: 30px;
+ }
+ .btn-logout:hover{
+     cursor: pointer;
+     
+     
+ }
+
+ .home{
+background-size: cover;
  }
 
  .welcome{
@@ -95,7 +130,20 @@
  .session-form{
      display: block;
      text-align: center;
-     
+     background-color:#f9f6e7;
+     height:100%;
+ }
+
+ .sessionbtn{
+     width:625px;
+     color: white;
+     background-color: #eb652f;
+     font-family: sans-serif;
+     height: 60px;
+     font-size:20px;
+     border:2px;
+     border-radius:10px;
+     position: relative;
  }
 
 .session-form-sign{
@@ -117,3 +165,4 @@ form{
      color: #FF8C00;
  }
  
+ @import "components/*"

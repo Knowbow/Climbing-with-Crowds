@@ -13,6 +13,7 @@ class Signup extends React.Component {
     }
     
     componentDidMount() {
+        
         this.props.clearErrors();
     }
 
@@ -68,7 +69,7 @@ class Signup extends React.Component {
                             placeholder="Password (at least 6 characters you won't forget!)"
                             className="session-form-sign"
                         />
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button className="sessionbtn" onClick={this.handleSubmit}>Sign Up</button>
                 </form>
                 </div>
                 </>

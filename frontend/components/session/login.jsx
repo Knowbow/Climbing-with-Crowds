@@ -7,7 +7,9 @@ class Login extends React.Component {
             name: '',
             email: '',
             password: '',
+            
         }
+        this.props.clearErrors();
         this.handleSubmit = this.handleSubmit.bind(this);
         
     }
@@ -39,7 +41,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="session-form">
             { this.renderErrors() }
             <div className="session-form">
                 <h2>Hey stranger!</h2>
@@ -59,10 +61,10 @@ class Login extends React.Component {
                             placeholder="Password"
                             className="session-form-sign"
                         />
-                    <button onClick={this.handleSubmit}>Log In</button>
+                    <button className="sessionbtn" onClick={this.handleSubmit}>Log In</button>
                 </form>
             </div>
-            </>
+            </div>
         )
     }
 }
