@@ -46,6 +46,35 @@ class Events extends React.Component {
             </div>
         )
     }
+    citiesEvents(){
+        const seed = [
+            {city_name: "San Francisco",
+            data:[
+                {
+                    id: 1,
+                    location_id: 1,
+                    host_id: 1,
+                    participant_id: 1,
+                    date: "08/08/2020",
+                    time: "2:00pm"
+                }
+                ]}
+        ]
+        const renderCities = seed.map(city => {
+            return (
+                <ul key={city.city_name.length}>
+                    <li>
+                        {city.city_name}
+                    </li>
+                </ul>
+            )
+        })
+        return (
+            <div>
+                {renderCities}
+            </div>
+        )
+    }
     render() {
 
         return (
@@ -58,6 +87,7 @@ class Events extends React.Component {
                     {this.intro()}
                     {this.body()}
                     {this.cityList()}
+                    {this.citiesEvents()}
                 </div>
             </>
         )
