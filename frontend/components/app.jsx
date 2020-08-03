@@ -11,7 +11,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_utils';
 
 
 const App = () => (
-    <div>
+    <div className="page-container">
         <NavbarContainer />
         <Switch>
             <Route exact path="/" component={HomeContainer} />

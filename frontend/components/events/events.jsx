@@ -72,13 +72,27 @@ class Events extends React.Component {
                     }
                 ]
             },
+            {
+                city_name: "Washington DC ",
+                event_data: [
+                    {
+                        id: 3,
+                        location_id: 3,
+                        host_id: 3,
+                        participant_id: 3,
+                        date: "08/10/2020",
+                        time: "4:00pm"
+                    }
+                ]
+            },
 
         ]
         const renderCities = seed.map(city => {
             return (
-                <ul key={city.city_name.length}>
-                    <li>
+                <ul className="eventIndex-container" key={city.city_name.length}>
+                    <li className="city">
                         {city.city_name}
+                        <span>👉🏽</span>
                     </li>
                     <br/>
                     <li>
@@ -90,11 +104,8 @@ class Events extends React.Component {
 
              
         return (
-            <div className="eventIndex-container">
-                <div className="cities">
-                    {renderCities}
-                </div>
-                
+            <div>
+               {renderCities}    
             </div>
             
         )
@@ -102,16 +113,26 @@ class Events extends React.Component {
     renderEventDetails(city) {
         const cityDetails = city.event_data.map(details => {
             return (
-                <ul key={city.city_name.length}>
-                    <li>
-                        {details.date}
-                    </li>
+                <ul className="event-timeul" key={city.city_name.length}>
+                    <div className="event-box">
+                        <div className="event-time">
+                            <li>
+                                {details.date}
+                            </li>
+                            <li>
+                                {details.time}
+                            </li>
+                        </div >
+                        <div>
+
+                        </div>
+                    </div >
                 </ul>
             )
         })
 
         return (
-            <div>
+            <div className="event-container">
                 {cityDetails}
             </div>
         )
@@ -121,8 +142,8 @@ class Events extends React.Component {
     render() {
 
         return (
-            <>
-                <div className="events-container">
+            <div className="events-container">
+                <div className="events-pic">
                     <img className="home" alt="Friends" src="https://images.squarespace-cdn.com/content/v1/5be4f2c0f793929686b0a305/1567669642144-HELFNPOTBA55RPC2J0FL/ke17ZwdGBToddI8pDm48kGPVK--wGoWXJsqwlxbZlQN7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5enfxu_O4VeONvneR-F6W8oeFhFqSrYyNrfPB9Y70_gvQ/LM_181130_ClimbFitKirrawee_0086_HIGHres.jpg?format=2500w"
                     />
                 </div>
@@ -132,7 +153,7 @@ class Events extends React.Component {
                     {this.cityList()}
                     {this.citiesEvents()}
                 </div>
-            </>
+            </div>
         )
     }
 }
