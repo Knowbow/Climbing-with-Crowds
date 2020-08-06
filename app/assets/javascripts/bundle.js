@@ -961,10 +961,15 @@ __webpack_require__.r(__webpack_exports__);
   }, "Link3"));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "footer-bar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "logo",
-    to: "/"
-  }, "Climbing With Friends"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links-container"
+  }, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "footer-info"
+  }, "Climbing with Crowds is all about making our cities feel more like neighborhoods. We're more \"connected\" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "footer-info"
+  }, "We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.")));
 });
 
 /***/ }),
@@ -1128,9 +1133,52 @@ var mdtp = function mdtp(dispatch) {
   !*** ./frontend/components/nav_bar/nav_bar.jsx ***!
   \*************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/knowbow/Desktop/Climbing/frontend/components/nav_bar/nav_bar.jsx: Unexpected token (27:0)\n\n\u001b[0m \u001b[90m 25 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mheader\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 | \u001b[39m    )\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at Object._raise (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:757:17)\n    at Object.raiseWithData (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:750:17)\n    at Object.raise (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:744:17)\n    at Object.unexpected (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:8834:16)\n    at Object.parseExprAtom (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:10176:20)\n    at Object.parseExprAtom (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:4648:20)\n    at Object.parseExprSubscripts (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9688:23)\n    at Object.parseMaybeUnary (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9668:21)\n    at Object.parseExprOps (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9538:23)\n    at Object.parseMaybeConditional (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9511:23)\n    at Object.parseMaybeAssign (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9466:21)\n    at Object.parseExpression (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9418:23)\n    at Object.parseStatementContent (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11339:23)\n    at Object.parseStatement (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11210:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11785:25)\n    at Object.parseBlockBody (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11771:10)\n    at Object.parseBlock (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11755:10)\n    at Object.parseFunctionBody (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:10758:24)\n    at Object.parseArrowExpression (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:10727:10)\n    at Object.parseParenAndDistinguishExpression (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:10341:12)\n    at Object.parseExprAtom (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:10042:21)\n    at Object.parseExprAtom (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:4648:20)\n    at Object.parseExprSubscripts (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9688:23)\n    at Object.parseMaybeUnary (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9668:21)\n    at Object.parseExprOps (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9538:23)\n    at Object.parseMaybeConditional (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9511:23)\n    at Object.parseMaybeAssign (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:9466:21)\n    at Object.parseExportDefaultExpression (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:12412:24)\n    at Object.parseExport (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:12314:31)\n    at Object.parseStatementContent (/Users/knowbow/Desktop/Climbing/node_modules/@babel/parser/lib/index.js:11314:27)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var currentUser = _ref.currentUser,
+      logout = _ref.logout;
+  var display = currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/"
+  }, "Welcome ", currentUser.name, "!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/create"
+  }, "Hosting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/",
+    onClick: logout
+  }, "Sign Out")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/signup"
+  }, "Sign Up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/login"
+  }, "Log In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn",
+    to: "/guest"
+  }, "Demo"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "nav-bar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "left-nav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "logo",
+    to: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "logo-pic",
+    src: "https://i.imgur.com/JdHqSAg.png"
+  }), " Climbing With Friends")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-right"
+  }, display));
+});
 
 /***/ }),
 
