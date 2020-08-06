@@ -1,10 +1,12 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 class Events extends React.Component {
     constructor(props) {
         super(props);
 
     }
+
 
     intro(){
         return (
@@ -28,6 +30,7 @@ class Events extends React.Component {
         )
     }
 
+    
     cityList(){
         return(
             <div className="city-list-container">
@@ -37,13 +40,14 @@ class Events extends React.Component {
                 <div className='city-list'>
                     <ul className="cities">
                         <li>
-                            San Francisco
+                            <Link to="/events#San Francisco">San Francisco</Link>
+
                         </li>
                         <li>
-                            New York City
+                            <Link to="/events#New York">New York</Link>
                         </li>
                         <li>
-                            Washington DC
+                            <Link to="/events#Washington DC ">Washington DC</Link>
                         </li>
                     </ul>
                 </div>
@@ -55,24 +59,26 @@ class Events extends React.Component {
             {city_name: "San Francisco",
             event_data:[
                 {
-                    id: 1,
+                    id: 0,
                     location_id: 1,
                     host_id: 1,
                     participant_id: 1,
                     date: "08/08/2020",
-                    time: "2:00pm"
+                    time: "2:00pm",
+                    location: "Online Zoom"
                 }
                 ]},
             {
                 city_name: "New York",
                 event_data: [
                     {
-                        id: 2,
+                        id: 1,
                         location_id: 2,
                         host_id: 2,
                         participant_id: 2,
                         date: "08/09/2020",
-                        time: "3:00pm"
+                        time: "3:00pm",
+                        location: "Sportrock"
                     }
                 ]
             },
@@ -80,12 +86,13 @@ class Events extends React.Component {
                 city_name: "Washington DC ",
                 event_data: [
                     {
-                        id: 3,
+                        id: 2,
                         location_id: 3,
                         host_id: 3,
                         participant_id: 3,
                         date: "08/10/2020",
-                        time: "4:00pm"
+                        time: "4:00pm",
+                        location: "24 hour fitness"
                     }
                 ]
             },
@@ -93,7 +100,7 @@ class Events extends React.Component {
         ]
         const renderCities = seed.map(city => {
             return (
-                <ul className="cities-container" key={city.city_name.length}>
+                <ul className="cities-container" key={city.city_name.length} id={city.city_name}>
                     <li className="city">
                         {city.city_name}
                         <span>👉🏽</span>
@@ -116,6 +123,7 @@ class Events extends React.Component {
     }
     renderEventDetails(city) {
         const cityDetails = city.event_data.map(details => {
+            let number = details.id;
             return (
                 <ul className="event-timeul" key={city.city_name.length}>
                     <div className="event-box">
@@ -127,6 +135,17 @@ class Events extends React.Component {
                                 {details.time}
                             </li>
                         </div >
+                        <li className="loc">
+                            {details.location}
+                        </li>
+                        <Link to={{
+                            pathname: `/events/${details.id}`,
+                            state: {
+                                id: number
+                            }
+                        }}>
+                            <li className="count-button">count me in</li>
+                        </Link>
                         <div>
 
                         </div>
@@ -148,7 +167,7 @@ class Events extends React.Component {
         return (
             <div className="events-container">
                 <div className="events-pic">
-                    <img className="home" alt="Friends" src="https://images.squarespace-cdn.com/content/v1/5be4f2c0f793929686b0a305/1567669642144-HELFNPOTBA55RPC2J0FL/ke17ZwdGBToddI8pDm48kGPVK--wGoWXJsqwlxbZlQN7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5enfxu_O4VeONvneR-F6W8oeFhFqSrYyNrfPB9Y70_gvQ/LM_181130_ClimbFitKirrawee_0086_HIGHres.jpg?format=2500w"
+                    <img className="event-pic" alt="Friends" src="https://gripped.com/wp-content/uploads/2018/02/Climbing-Gym3.jpeg"
                     />
                 </div>
                 
@@ -156,6 +175,7 @@ class Events extends React.Component {
                     {this.body()}
                     {this.cityList()}
                     {this.citiesEvents()}
+                    <h3 id="here">HIYA</h3>
                 
             </div>
         )

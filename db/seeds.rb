@@ -19,3 +19,5 @@ u2 = User.create!(
     email: "bee",
     password: "bbbbbb"
 )
+
+e1 - Event.new(id: 1, host_id: 1, date:"hi")
