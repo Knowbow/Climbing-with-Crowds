@@ -10,9 +10,9 @@ class Events extends React.Component {
 
     intro(){
         return (
-            <div className="events-title">
-                <h2>Good Conversations</h2>
-                <p>They're hard to find.</p>
+            <div className="one">
+                <h2 className="header">Good Conversations</h2>
+                <p className="subheader">They're hard to find.</p>
 
             </div>
         )
@@ -24,7 +24,7 @@ class Events extends React.Component {
                 <div className="events-body"> 
                     <h3>Climbing With Friends is climbing, with company</h3>
                     <p>For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point</p>
-                    <p>If none of these work for you, you can sign up and we'll email you when next month's tea times are all up. You can also apply to be a Host!</p>
+                    <p>If none of these work for you, you can sign up and we'll email you when next month's times are all up. You can also apply to be a Host!</p>
                 </div>
             </div>
         )
@@ -40,8 +40,7 @@ class Events extends React.Component {
                 <div className='city-list'>
                     <ul className="cities">
                         <li>
-                            <Link to="/events#San Francisco">San Francisco</Link>
-
+                            <Link  to="/events#San Francisco">San Francisco</Link>
                         </li>
                         <li>
                             <Link to="/events#New York">New York</Link>
@@ -63,36 +62,69 @@ class Events extends React.Component {
                     location_id: 1,
                     host_id: 1,
                     participant_id: 1,
-                    date: "08/08/2020",
-                    time: "2:00pm",
-                    location: "Online Zoom"
+                    date: "Sunday, Aug 23",
+                    time: "2-4pm",
+                    location: "Online Zoom", 
+                    url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg"
+                },
+                {
+                    id: 1,
+                    location_id: 1,
+                    host_id: 1,
+                    participant_id: 1,
+                    date: "Monday, Aug 24",
+                    time: "4-6pm",
+                    location: "Online Zoom",
+                    url: "https://i.mydramalist.com/rxvggc.jpg"
+                },
+                {
+                    id: 2,
+                    location_id: 1,
+                    host_id: 1,
+                    participant_id: 1,
+                    date: "Tuesday, Aug 25",
+                    time: "6-8pm",
+                    location: "Online Zoom",
+                    url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg"
                 }
                 ]},
             {
                 city_name: "New York",
                 event_data: [
                     {
-                        id: 1,
+                        id: 3,
                         location_id: 2,
                         host_id: 2,
                         participant_id: 2,
-                        date: "08/09/2020",
-                        time: "3:00pm",
-                        location: "Sportrock"
-                    }
+                        date: "Saturday, Aug 22",
+                        time: "3-5pm",
+                        location: "Online Zoom",
+                        url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
+                    },
+                    {
+                        id: 4,
+                        location_id: 2,
+                        host_id: 2,
+                        participant_id: 2,
+                        date: "Saturday, Aug 22",
+                        time: "3-5pm",
+                        location: "Sportrock",
+                        url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg"
+                    },
                 ]
             },
             {
                 city_name: "Washington DC ",
                 event_data: [
                     {
-                        id: 2,
+                        id: 5,
                         location_id: 3,
                         host_id: 3,
                         participant_id: 3,
-                        date: "08/10/2020",
-                        time: "4:00pm",
-                        location: "24 hour fitness"
+                        date: "Friday, Aug 7",
+                        time: "4-6pm",
+                        location: "24 hour fitness",
+                        url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize"
                     }
                 ]
             },
@@ -100,7 +132,7 @@ class Events extends React.Component {
         ]
         const renderCities = seed.map(city => {
             return (
-                <ul className="cities-container" key={city.city_name.length} id={city.city_name}>
+                <ul className="cities-container" key={Math.random()} id={city.city_name}>
                     <li className="city">
                         {city.city_name}
                         <span>👉🏽</span>
@@ -125,7 +157,7 @@ class Events extends React.Component {
         const cityDetails = city.event_data.map(details => {
             let number = details.id;
             return (
-                <ul className="event-timeul" key={city.city_name.length}>
+                <ul className="event-timeul" key={Math.random()}>
                     <div className="event-box">
                         <div className="event-time">
                             <li>
@@ -135,21 +167,26 @@ class Events extends React.Component {
                                 {details.time}
                             </li>
                         </div >
+                        <li className="events-image">
+                            <img src={details.url} />
+                        </li>
                         <li className="loc">
                             {details.location}
                         </li>
-                        <Link to={{
-                            pathname: `/events/${details.id}`,
-                            state: {
-                                id: number
-                            }
-                        }}>
-                            <li className="count-button">count me in</li>
-                        </Link>
+                        <li className="loc1">MANY SEATS LEFT!</li>
+                        
                         <div>
 
                         </div>
                     </div >
+                    <Link to={{
+                        pathname: `/events/${details.id}`,
+                        state: {
+                            id: number
+                        }
+                    }}>
+                        <li className="count-button">count me in</li>
+                    </Link>
                 </ul>
             )
         })
@@ -165,17 +202,16 @@ class Events extends React.Component {
     render() {
 
         return (
-            <div className="events-container">
-                <div className="events-pic">
-                    <img className="event-pic" alt="Friends" src="https://gripped.com/wp-content/uploads/2018/02/Climbing-Gym3.jpeg"
-                    />
+            <div >
+                <div className="event-pic">
+                    <img className="e-pic" src="https://climbcityrock.com/images/homepage-header-2-2020.jpg" />
                 </div>
                 
-                    {this.intro()}
-                    {this.body()}
-                    {this.cityList()}
-                    {this.citiesEvents()}
-                    <h3 id="here">HIYA</h3>
+                {this.intro()}
+                {this.body()}
+                {this.cityList()}               
+                {this.citiesEvents()}
+                   
                 
             </div>
         )

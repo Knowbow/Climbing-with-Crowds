@@ -28,7 +28,7 @@ class Event extends React.Component {
                 <div className="events-body">
                     <h3>Climbing With Friends is climbing, with company</h3>
                     <p>For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point</p>
-                    <p>If none of these work for you, you can sign up and we'll email you when next month's tea times are all up. You can also apply to be a Host!</p>
+                    <p>If none of these work for you, you can sign up and we'll email you when next month's climb times are all up. You can also apply to be a Host!</p>
                 </div>
             </div>
         )
@@ -36,8 +36,8 @@ class Event extends React.Component {
 
     signUpButton() {
         return (
-            <div className="event-signup">
-                <button onClick={this.handleSubmit}>SIGN ME UP</button>
+            <div >
+                <button className="event-signup">SIGN ME UP</button>
             </div>
         );
     }
@@ -47,25 +47,49 @@ class Event extends React.Component {
             {
                 city_name: "San Francisco",
                 id: 1,
-                name: "Joy",
+                name: "Hyori",
                 date: "Sunday, Aug 23",
                 time: "4-6PM",
                 location: "Online Zoom"   
             },
             {
+                city_name: "San Francisco",
+                id: 1,
+                name: "Rain",
+                date: "Monday, Aug 24",
+                time: "4-6PM",
+                location: "Online Zoom"
+            },
+            {
+                city_name: "San Francisco",
+                id: 1,
+                name: "Yoo",
+                date: "Tuesday, Aug 25",
+                time: "6-8PM",
+                location: "Online Zoom"
+            },
+            {
+                city_name: "New York",
+                id: 1,
+                name: "Joy",
+                date: "Saturday, Aug 22",
+                time: "3-5PM",
+                location: "Online Zoom"
+            },
+            {
                city_name: "New York",
                 id: 2,
-                name: "Hyun Bin",
-                date: "08/09/2020",
-                time: "3:00pm",
+                name: "Eunji",
+                date: "Saturday, Aug 22",
+                time: "3-5pm",
                 location: "Sportrock"
             },
             {
                 city_name: "Washington DC ",
                 id: 3,
-                name: "Eunji",
-                date: "08/10/2020",
-                time: "4:00pm",
+                name: "Jongkook",
+                date: "Friday, Aug 7",
+                time: "4-6pm",
                 location: "24 hour fitness"
 
             },
@@ -90,20 +114,30 @@ class Event extends React.Component {
     hostInfo(){
         const seed = [
             {
+                name: "Hyori",
+                url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg"
+            },
+            {
+                name: "Rain",
+                url: "https://i.mydramalist.com/rxvggc.jpg"
+
+            },
+            {
+                name: "Yoo",
+                url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg"
+            },
+            {
                 name: "Joy",
                 url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
             },
             {
-                name: "Hyun Bin",
-                url: "https://i.pinimg.com/originals/56/13/ec/5613ec4f9c8ea0f91e64a3029606b878.jpg"
-
+                name: "Eunji",
+                url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg"
             },
             {
-                name: "Joy",
-                url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
-
-
-            },
+                name: "Jongkook",
+                url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize"
+            }
 
         ]
         return (
@@ -114,7 +148,7 @@ class Event extends React.Component {
                     <li ><img className="host-image" src={seed[this.props.location.state.id].url}/></li>
                     <br />
                     <li className="event-bio">
-                        <p>W- “What’s up?!” - “Oh, not too much.” *End of conversation* We walk by hundreds of human beings every day but know so little about each of them. Let’s grab some tea and get to know each other… just because we can!</p>
+                        <p>W- “What’s up?!” - “Oh, not too much.” *End of conversation* We walk by hundreds of human beings every day but know so little about each of them. Let’s grab some and get to know each other… just because we can!</p>
                         <h1>What might we talk about?</h1>
                         <p>What has been the highlight our your last month? Last year? What wacky theories do you have about the world? What is your favorite place in the world? What is your spirit-animal? If you had a billion dollars and didn’t have to work, what would you do? What is love? What was the most influential year of your life? What’s important to you? If you had a time-machine, what is one piece of advice you would pass along to your 18-year-old self? What makes you happy? But most importantly, what’s been on your mind recently?</p>
 

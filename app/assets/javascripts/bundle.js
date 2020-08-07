@@ -564,15 +564,13 @@ var Event = /*#__PURE__*/function (_React$Component) {
         className: "events-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "events-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "If none of these work for you, you can sign up and we'll email you when next month's tea times are all up. You can also apply to be a Host!")));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "If none of these work for you, you can sign up and we'll email you when next month's climb times are all up. You can also apply to be a Host!")));
     }
   }, {
     key: "signUpButton",
     value: function signUpButton() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "event-signup"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
       }, "SIGN ME UP"));
     }
   }, {
@@ -581,23 +579,44 @@ var Event = /*#__PURE__*/function (_React$Component) {
       var seed = [{
         city_name: "San Francisco",
         id: 1,
-        name: "Joy",
+        name: "Hyori",
         date: "Sunday, Aug 23",
         time: "4-6PM",
         location: "Online Zoom"
       }, {
+        city_name: "San Francisco",
+        id: 1,
+        name: "Rain",
+        date: "Monday, Aug 24",
+        time: "4-6PM",
+        location: "Online Zoom"
+      }, {
+        city_name: "San Francisco",
+        id: 1,
+        name: "Yoo",
+        date: "Tuesday, Aug 25",
+        time: "6-8PM",
+        location: "Online Zoom"
+      }, {
+        city_name: "New York",
+        id: 1,
+        name: "Joy",
+        date: "Saturday, Aug 22",
+        time: "3-5PM",
+        location: "Online Zoom"
+      }, {
         city_name: "New York",
         id: 2,
-        name: "Hyun Bin",
-        date: "08/09/2020",
-        time: "3:00pm",
+        name: "Eunji",
+        date: "Saturday, Aug 22",
+        time: "3-5pm",
         location: "Sportrock"
       }, {
         city_name: "Washington DC ",
         id: 3,
-        name: "Eunji",
-        date: "08/10/2020",
-        time: "4:00pm",
+        name: "Jongkook",
+        date: "Friday, Aug 7",
+        time: "4-6pm",
         location: "24 hour fitness"
       }];
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -622,14 +641,23 @@ var Event = /*#__PURE__*/function (_React$Component) {
     key: "hostInfo",
     value: function hostInfo() {
       var seed = [{
+        name: "Hyori",
+        url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg"
+      }, {
+        name: "Rain",
+        url: "https://i.mydramalist.com/rxvggc.jpg"
+      }, {
+        name: "Yoo",
+        url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg"
+      }, {
         name: "Joy",
         url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
       }, {
-        name: "Hyun Bin",
-        url: "https://i.pinimg.com/originals/56/13/ec/5613ec4f9c8ea0f91e64a3029606b878.jpg"
+        name: "Eunji",
+        url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg"
       }, {
-        name: "Joy",
-        url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
+        name: "Jongkook",
+        url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize"
       }];
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-host-container"
@@ -642,7 +670,7 @@ var Event = /*#__PURE__*/function (_React$Component) {
         src: seed[this.props.location.state.id].url
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-bio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "W- \u201CWhat\u2019s up?!\u201D - \u201COh, not too much.\u201D *End of conversation* We walk by hundreds of human beings every day but know so little about each of them. Let\u2019s grab some tea and get to know each other\u2026 just because we can!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What might we talk about?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What has been the highlight our your last month? Last year? What wacky theories do you have about the world? What is your favorite place in the world? What is your spirit-animal? If you had a billion dollars and didn\u2019t have to work, what would you do? What is love? What was the most influential year of your life? What\u2019s important to you? If you had a time-machine, what is one piece of advice you would pass along to your 18-year-old self? What makes you happy? But most importantly, what\u2019s been on your mind recently?"))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "W- \u201CWhat\u2019s up?!\u201D - \u201COh, not too much.\u201D *End of conversation* We walk by hundreds of human beings every day but know so little about each of them. Let\u2019s grab some and get to know each other\u2026 just because we can!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "What might we talk about?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "What has been the highlight our your last month? Last year? What wacky theories do you have about the world? What is your favorite place in the world? What is your spirit-animal? If you had a billion dollars and didn\u2019t have to work, what would you do? What is love? What was the most influential year of your life? What\u2019s important to you? If you had a time-machine, what is one piece of advice you would pass along to your 18-year-old self? What makes you happy? But most importantly, what\u2019s been on your mind recently?"))));
     }
   }, {
     key: "render",
@@ -761,8 +789,12 @@ var Events = /*#__PURE__*/function (_React$Component) {
     key: "intro",
     value: function intro() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "events-title"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good Conversations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "They're hard to find."));
+        className: "one"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "header"
+      }, "Good Conversations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "subheader"
+      }, "They're hard to find."));
     }
   }, {
     key: "body",
@@ -771,7 +803,7 @@ var Events = /*#__PURE__*/function (_React$Component) {
         className: "events-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "events-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "If none of these work for you, you can sign up and we'll email you when next month's tea times are all up. You can also apply to be a Host!")));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "For two hours, you and company climb at a rock-climbing gym with a host to lead a session. The circumstances are unusual, but that's the point"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "If none of these work for you, you can sign up and we'll email you when next month's times are all up. You can also apply to be a Host!")));
     }
   }, {
     key: "cityList",
@@ -804,37 +836,67 @@ var Events = /*#__PURE__*/function (_React$Component) {
           location_id: 1,
           host_id: 1,
           participant_id: 1,
-          date: "08/08/2020",
-          time: "2:00pm",
-          location: "Online Zoom"
+          date: "Sunday, Aug 23",
+          time: "2-4pm",
+          location: "Online Zoom",
+          url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg"
+        }, {
+          id: 1,
+          location_id: 1,
+          host_id: 1,
+          participant_id: 1,
+          date: "Monday, Aug 24",
+          time: "4-6pm",
+          location: "Online Zoom",
+          url: "https://i.mydramalist.com/rxvggc.jpg"
+        }, {
+          id: 2,
+          location_id: 1,
+          host_id: 1,
+          participant_id: 1,
+          date: "Tuesday, Aug 25",
+          time: "6-8pm",
+          location: "Online Zoom",
+          url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg"
         }]
       }, {
         city_name: "New York",
         event_data: [{
-          id: 1,
+          id: 3,
           location_id: 2,
           host_id: 2,
           participant_id: 2,
-          date: "08/09/2020",
-          time: "3:00pm",
-          location: "Sportrock"
+          date: "Saturday, Aug 22",
+          time: "3-5pm",
+          location: "Online Zoom",
+          url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
+        }, {
+          id: 4,
+          location_id: 2,
+          host_id: 2,
+          participant_id: 2,
+          date: "Saturday, Aug 22",
+          time: "3-5pm",
+          location: "Sportrock",
+          url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg"
         }]
       }, {
         city_name: "Washington DC ",
         event_data: [{
-          id: 2,
+          id: 5,
           location_id: 3,
           host_id: 3,
           participant_id: 3,
-          date: "08/10/2020",
-          time: "4:00pm",
-          location: "24 hour fitness"
+          date: "Friday, Aug 7",
+          time: "4-6pm",
+          location: "24 hour fitness",
+          url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize"
         }]
       }];
       var renderCities = seed.map(function (city) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "cities-container",
-          key: city.city_name.length,
+          key: Math.random(),
           id: city.city_name
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "city"
@@ -849,14 +911,20 @@ var Events = /*#__PURE__*/function (_React$Component) {
         var number = details.id;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "event-timeul",
-          key: city.city_name.length
+          key: Math.random()
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "event-box"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "event-time"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, details.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, details.time)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "events-image"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: details.url
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "loc"
-        }, details.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
+        }, details.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "loc1"
+        }, "MANY SEATS LEFT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
           to: {
             pathname: "/events/".concat(details.id),
             state: {
@@ -865,7 +933,7 @@ var Events = /*#__PURE__*/function (_React$Component) {
           }
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "count-button"
-        }, "count me in")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
+        }, "count me in")));
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-container"
@@ -874,17 +942,12 @@ var Events = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "events-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "events-pic"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "event-pic"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "event-pic",
-        alt: "Friends",
-        src: "https://gripped.com/wp-content/uploads/2018/02/Climbing-Gym3.jpeg"
-      })), this.intro(), this.body(), this.cityList(), this.citiesEvents(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        id: "here"
-      }, "HIYA"));
+        className: "e-pic",
+        src: "https://climbcityrock.com/images/homepage-header-2-2020.jpg"
+      })), this.intro(), this.body(), this.cityList(), this.citiesEvents());
     }
   }]);
 
@@ -1022,6 +1085,7 @@ var mdtp = function mdtp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1046,6 +1110,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Home = /*#__PURE__*/function (_React$Component) {
   _inherits(Home, _React$Component);
 
@@ -1061,26 +1126,86 @@ var Home = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home"
+        className: "home-pic"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "home",
-        alt: "Friends",
-        src: "https://images.squarespace-cdn.com/content/v1/5be4f2c0f793929686b0a305/1567669642144-HELFNPOTBA55RPC2J0FL/ke17ZwdGBToddI8pDm48kGPVK--wGoWXJsqwlxbZlQN7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5enfxu_O4VeONvneR-F6W8oeFhFqSrYyNrfPB9Y70_gvQ/LM_181130_ClimbFitKirrawee_0086_HIGHres.jpg?format=2500w"
+        className: "r-pic",
+        src: "https://www.visitrenotahoe.com/wp-content/uploads/2019/10/The-Outbound-Rock-Climbing-HEADER-1920x675.jpg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "frontpage"
+        className: "one"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "introl"
+        className: "header"
+      }, "Everyone is interesting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "subheader"
+      }, "But you don't discover that when you're staring at a screen."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/events",
+        className: "event-link"
+      }, "Let's Climb!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "two"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "two-one"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "two-header"
       }, "Show up for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "intro"
-      }, "Have a real conversation "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "intro"
+        className: "two-body"
+      }, "You and a few others join a host at a gym.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "two-two"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "two-header"
+      }, "Have a real conversation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "two-body"
+      }, "You talk for two hours about anything.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "two-three"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "two-header"
       }, "See what happens"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "intro1l"
-      }, "You and a few others meet at a gym"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "intro1"
-      }, "You climb or belay for as long as you want"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "intro1"
-      }, "That's it. No strings attached")));
+        className: "two-body"
+      }, "That's it. No strings attached."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-intro"
+      }, "So why are thousands of people doing it?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-one"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "three-img",
+        src: "http://dcu7hky3kqbj1.cloudfront.net/assets/landing/realpeople-1d5fb20324228744e992569f082415977c4b3799ef7b14cc5922c2dade18f97c.png"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-header"
+      }, "It's weird."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-body"
+      }, "Everyone at climbing is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-two"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-header"
+      }, "We won't meet otherwise."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-body"
+      }, "In all likelihood, our paths won\u2019t cross for any reason. So often, we only meet people through work, school, or friends of friends. And even then, it\u2019s questionable. So basically, we manufacture serendipity.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "three-img",
+        src: "http://dcu7hky3kqbj1.cloudfront.net/assets/landing/nevermeet-55361a98c59cda3fced04c6234e80553c4ed3858c1028008e6fa3642185d57b9.png"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-three"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "three-img",
+        src: "http://dcu7hky3kqbj1.cloudfront.net/assets/landing/highfive-e7a173c8a773070abd084deeac2eb53919a70990425599ed5e7164dc143d45c6.png"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "three-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-header"
+      }, "Your hands are made for high fiving!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "three-body"
+      }, "And your eyes are made\u2026for eye contact! Real humans are so much cooler than their tweets or Instagram pictures. Climbing has real humans! #nofilter!")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "four"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "four-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "splash-four"
+      }, "Actually climb with people"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/events",
+        className: "event-link"
+      }, "Let's join!"))));
     }
   }]);
 
@@ -1440,7 +1565,11 @@ var Login = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors);
+      if (this.props.errors != null) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "session-errors"
+        }, this.props.errors);
+      }
     }
   }, {
     key: "handleSubmit",
@@ -1454,9 +1583,9 @@ var Login = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1592,7 +1721,9 @@ var Signup = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors);
+      if (this.props.errors != null) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors);
+      }
     }
   }, {
     key: "handleInput",
@@ -1615,8 +1746,8 @@ var Signup = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Join for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1000s of strangers across the world have climbed toge. Create an account and you'll be on your way to join the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "session-form-signup"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Join for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",

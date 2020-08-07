@@ -24,12 +24,12 @@ class Login extends React.Component {
     }
 
     renderErrors() {
-
+        if (this.props.errors != null) {
         return (
-            <ul>
+            <ul className="session-errors">
                 {this.props.errors}
             </ul>
-        )
+        )}
     }
 
     handleSubmit(e) {
@@ -42,8 +42,8 @@ class Login extends React.Component {
     render() {
         return (
             <div className="session-form">
-            { this.renderErrors() }
             <div className="session-form">
+            { this.renderErrors() }
                 <h2>Hey stranger!</h2>
                 <p>It's good to have you back. Sign in here and sign up for your next climb!</p>
                 <form className="signup">
