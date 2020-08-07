@@ -468,7 +468,37 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.time,
         onChange: this.handleInput('time'),
-        placeholder: "Email Address",
+        placeholder: "Date",
+        className: "session-form-sign"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.time,
+        onChange: this.handleInput('time'),
+        placeholder: "Time",
+        className: "session-form-sign"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.time,
+        onChange: this.handleInput('time'),
+        placeholder: "Location",
+        className: "session-form-sign"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.time,
+        onChange: this.handleInput('time'),
+        placeholder: "City",
+        className: "session-form-sign"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.time,
+        onChange: this.handleInput('time'),
+        placeholder: "Intro",
+        className: "session-form-sign"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.time,
+        onChange: this.handleInput('time'),
+        placeholder: "Description of event",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sessionbtn",

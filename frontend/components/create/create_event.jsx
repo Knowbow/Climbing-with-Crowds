@@ -54,7 +54,42 @@ class CreateEvent extends React.Component{
                         type="text"
                         value={this.state.time}
                         onChange={this.handleInput('time')}
-                        placeholder="Email Address"
+                        placeholder="Date"
+                        className="session-form-sign"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        onChange={this.handleInput('time')}
+                        placeholder="Time"
+                        className="session-form-sign"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        onChange={this.handleInput('time')}
+                        placeholder="Location"
+                        className="session-form-sign"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        onChange={this.handleInput('time')}
+                        placeholder="City"
+                        className="session-form-sign"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        onChange={this.handleInput('time')}
+                        placeholder="Intro"
+                        className="session-form-sign"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.time}
+                        onChange={this.handleInput('time')}
+                        placeholder="Description of event"
                         className="session-form-sign"
                     />
                     
