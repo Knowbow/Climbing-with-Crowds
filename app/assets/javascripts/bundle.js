@@ -611,7 +611,7 @@ var Event = /*#__PURE__*/function (_React$Component) {
         id: 1,
         name: "Hyori",
         date: "Sunday, Aug 23",
-        time: "4-6PM",
+        time: "2-4PM",
         location: "Online Zoom"
       }, {
         city_name: "San Francisco",

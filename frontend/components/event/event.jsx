@@ -49,7 +49,7 @@ class Event extends React.Component {
                 id: 1,
                 name: "Hyori",
                 date: "Sunday, Aug 23",
-                time: "4-6PM",
+                time: "2-4PM",
                 location: "Online Zoom"   
             },
             {
