@@ -185,3 +185,15 @@ class Event extends React.Component {
     
 } 
 export default Event;
+
+
+function Map(props) {
+    return (
+        <GoogleMap
+            defaultZoom={10}
+            defaultCenter={{
+                lat: 40.7591704, lng: -74.0392709
+            }} />
+    )
+}
+
