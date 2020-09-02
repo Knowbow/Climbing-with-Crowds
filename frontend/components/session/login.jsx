@@ -26,7 +26,7 @@ class Login extends React.Component {
     renderErrors() {
         if (this.props.errors != null) {
         return (
-            <ul className="session-errors">
+            <ul className="session-form-sign1">
                 {this.props.errors}
             </ul>
         )}
@@ -43,7 +43,7 @@ class Login extends React.Component {
         return (
             <div className="session-form">
             <div className="session-form">
-            { this.renderErrors() }
+            
                 <h2>Hey stranger!</h2>
                 <p>It's good to have you back. Sign in here and sign up for your next climb!</p>
                 <form className="signup">
@@ -61,9 +61,13 @@ class Login extends React.Component {
                             placeholder="Password"
                             className="session-form-sign"
                         />
+                        {this.renderErrors()}
                     <button className="sessionbtn" onClick={this.handleSubmit}>Log In</button>
+                
                 </form>
+                    
             </div>
+               
             </div>
         )
     }

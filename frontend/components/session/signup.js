@@ -20,7 +20,7 @@ class Signup extends React.Component {
     renderErrors(){
         if (this.props.errors != null){
         return(
-            <ul>
+            <ul className="session-form-sign1">
                 {this.props.errors}
             </ul>
         )
@@ -43,7 +43,7 @@ class Signup extends React.Component {
     render(){
         return (
             <>
-                {this.renderErrors()}
+               
             <div className="session-form-signup">
                 <h2>Join for climbing</h2>
                 <p>1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community</p>
@@ -70,7 +70,8 @@ class Signup extends React.Component {
                             placeholder="Password (at least 6 characters you won't forget!)"
                             className="session-form-sign"
                         />
-                    <button className="sessionbtn" onClick={this.handleSubmit}>Sign Up</button>
+                        {this.renderErrors()}
+                    <button className="sessionbtn" onClick={this.handleSubmit}>Sign Up!!</button>
                 </form>
                 </div>
                 </>

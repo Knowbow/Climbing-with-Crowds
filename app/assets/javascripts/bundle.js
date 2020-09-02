@@ -1613,7 +1613,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
     value: function renderErrors() {
       if (this.props.errors != null) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-          className: "session-errors"
+          className: "session-form-sign1"
         }, this.props.errors);
       }
     }
@@ -1631,7 +1631,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
         className: "session-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1645,7 +1645,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleInput('password'),
         placeholder: "Password",
         className: "session-form-sign"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sessionbtn",
         onClick: this.handleSubmit
       }, "Log In"))));
@@ -1768,7 +1768,9 @@ var Signup = /*#__PURE__*/function (_React$Component) {
     key: "renderErrors",
     value: function renderErrors() {
       if (this.props.errors != null) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "session-form-sign1"
+        }, this.props.errors);
       }
     }
   }, {
@@ -1791,7 +1793,7 @@ var Signup = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-signup"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Join for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "wrapper"
@@ -1813,10 +1815,10 @@ var Signup = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleInput('password'),
         placeholder: "Password (at least 6 characters you won't forget!)",
         className: "session-form-sign"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sessionbtn",
         onClick: this.handleSubmit
-      }, "Sign Up"))));
+      }, "Sign Up!!"))));
     }
   }]);
 
