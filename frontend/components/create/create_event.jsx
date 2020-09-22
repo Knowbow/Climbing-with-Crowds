@@ -8,8 +8,11 @@ class CreateEvent extends React.Component{
         super(props);
         this.state = {
             id: '',
-            //intro: '',
-            //description: '',
+            intro: '',
+            description: '',
+            location:'',
+            city:'',
+            name:'',
             date: '',
             time: '',
         }
@@ -46,7 +49,7 @@ class CreateEvent extends React.Component{
                     <input
                         type="text"
                         value={this.state.date}
-                        onChange={this.handleInput('date')}
+                        onChange={this.handleInput('name')}
                         placeholder="First name (or nickname)"
                         className="session-form-sign"
                     />
