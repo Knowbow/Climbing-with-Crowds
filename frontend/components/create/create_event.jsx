@@ -41,66 +41,69 @@ class CreateEvent extends React.Component{
 
     form(){
         return (
-            <div className="session-form">
-                <h2>Create a climbing session!</h2>
-                <p>1000s of strangers across the world have climbed together. Create an account and you'll be on your way to joining the community</p>
-                <form className="wrapper">
+          <div className="session-form">
+            <h2>Create a climbing session!</h2>
+            <p>
+              1000s of strangers across the world have climbed together. Create
+              an account and you'll be on your way to joining the community
+            </p>
+            <form className="wrapper">
+              <input
+                type="text"
+                value={this.state.name}
+                onChange={this.handleInput("name")}
+                placeholder="First name (or nickname)"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.date}
+                onChange={this.handleInput("date")}
+                placeholder="Date"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.time}
+                onChange={this.handleInput("time")}
+                placeholder="Time"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.location}
+                onChange={this.handleInput("location")}
+                placeholder="Location"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.city}
+                onChange={this.handleInput("city")}
+                placeholder="City"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.intro}
+                onChange={this.handleInput("intro")}
+                placeholder="Intro"
+                className="session-form-sign"
+              />
+              <input
+                type="text"
+                value={this.state.description}
+                onChange={this.handleInput("description")}
+                placeholder="Description of event"
+                className="session-form-sign"
+              />
 
-                    <input
-                        type="text"
-                        value={this.state.name}
-                        
-                        placeholder="First name (or nickname)"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.date}
-                        
-                        placeholder="Date"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.time}
-                        
-                        placeholder="Time"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.location}
-                        onChange={this.handleInput('location')}
-                        placeholder="Location"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.city}
-                        
-                        placeholder="City"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.intro}
-                        
-                        placeholder="Intro"
-                        className="session-form-sign"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.description}
-                      
-                        placeholder="Description of event"
-                        className="session-form-sign"
-                    />
-                    
-                    <button className="sessionbtn" onClick={this.handleSubmit}>Create Event</button>
-                </form>
-            </div>
-
-        )
+              <button className="sessionbtn" onClick={this.handleSubmit}>
+                Create Event
+              </button>
+            </form>
+          </div>
+        );
     }
 
    
