@@ -27,11 +27,11 @@ class CreateEvent extends React.Component{
     }
 
     handleSubmit(e) {
-        console.log('omg');
-        e.preventDefault();
-        const formEvent = Object.assign({}, this.state);
-        this.props.createEvent(formEvent);
-        
+      console.log("omg");
+      e.preventDefault();
+      const formEvent = Object.assign({}, this.state);
+      this.props.createEvent(formEvent);
+      //onChange={this.handleInput('name')}
     }
 
     updateState(deets) {
@@ -48,50 +48,50 @@ class CreateEvent extends React.Component{
 
                     <input
                         type="text"
-                        value={this.state.date}
-                        onChange={this.handleInput('name')}
+                        value={this.state.name}
+                        
                         placeholder="First name (or nickname)"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
-                        value={this.state.time}
-                        onChange={this.handleInput('date')}
+                        value={this.state.date}
+                        
                         placeholder="Date"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        
                         placeholder="Time"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
-                        value={this.state.time}
+                        value={this.state.location}
                         onChange={this.handleInput('location')}
                         placeholder="Location"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
-                        value={this.state.time}
-                        onChange={this.handleInput('city')}
+                        value={this.state.city}
+                        
                         placeholder="City"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
-                        value={this.state.time}
-                        onChange={this.handleInput('intro')}
+                        value={this.state.intro}
+                        
                         placeholder="Intro"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
-                        value={this.state.time}
-                        onChange={this.handleInput('description')}
+                        value={this.state.description}
+                      
                         placeholder="Description of event"
                         className="session-form-sign"
                     />
