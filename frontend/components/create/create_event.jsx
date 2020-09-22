@@ -53,7 +53,7 @@ class CreateEvent extends React.Component{
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        onChange={this.handleInput('date')}
                         placeholder="Date"
                         className="session-form-sign"
                     />
@@ -67,28 +67,28 @@ class CreateEvent extends React.Component{
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        onChange={this.handleInput('location')}
                         placeholder="Location"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        onChange={this.handleInput('city')}
                         placeholder="City"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        onChange={this.handleInput('intro')}
                         placeholder="Intro"
                         className="session-form-sign"
                     />
                     <input
                         type="text"
                         value={this.state.time}
-                        onChange={this.handleInput('time')}
+                        onChange={this.handleInput('description')}
                         placeholder="Description of event"
                         className="session-form-sign"
                     />
@@ -100,10 +100,7 @@ class CreateEvent extends React.Component{
         )
     }
 
-    handleSubmit(e){
-        e.preventDefault();
-        
-    }
+   
 
     render(){
         return (
