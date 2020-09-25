@@ -414,8 +414,11 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       id: '',
-      //intro: '',
-      //description: '',
+      intro: '',
+      description: '',
+      location: '',
+      city: '',
+      name: '',
       date: '',
       time: ''
     };
@@ -436,10 +439,10 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      console.log('omg');
+      console.log("omg");
       e.preventDefault();
       var formEvent = Object.assign({}, this.state);
-      this.props.createEvent(formEvent);
+      this.props.createEvent(formEvent); //onChange={this.handleInput('name')}
     }
   }, {
     key: "updateState",
@@ -456,59 +459,56 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
     value: function form() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a climbing session!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to joining the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a climbing session!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        style: "font-size:40px"
+      }, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to joining the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.date,
-        onChange: this.handleInput('date'),
+        value: this.state.name,
+        onChange: this.handleInput("name"),
         placeholder: "First name (or nickname)",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.time,
-        onChange: this.handleInput('time'),
+        value: this.state.date,
+        onChange: this.handleInput("date"),
         placeholder: "Date",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.time,
-        onChange: this.handleInput('time'),
+        onChange: this.handleInput("time"),
         placeholder: "Time",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.time,
-        onChange: this.handleInput('time'),
+        value: this.state.location,
+        onChange: this.handleInput("location"),
         placeholder: "Location",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.time,
-        onChange: this.handleInput('time'),
+        value: this.state.city,
+        onChange: this.handleInput("city"),
         placeholder: "City",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.time,
-        onChange: this.handleInput('time'),
+        value: this.state.intro,
+        onChange: this.handleInput("intro"),
         placeholder: "Intro",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.time,
-        onChange: this.handleInput('time'),
+        value: this.state.description,
+        onChange: this.handleInput("description"),
         placeholder: "Description of event",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sessionbtn",
         onClick: this.handleSubmit
       }, "Create Event")));
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
     }
   }, {
     key: "render",
