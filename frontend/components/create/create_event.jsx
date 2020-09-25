@@ -45,7 +45,7 @@ class CreateEvent extends React.Component{
             <h2>Create a climbing session!</h2>
             <p style="font-size:40px">
               1000s of strangers across the world have climbed together. Create
-              an account and you'll be on your way to joining the community
+              an account and you'll be on your way to joining the community!!
             </p>
             <form className="wrapper">
               <input
