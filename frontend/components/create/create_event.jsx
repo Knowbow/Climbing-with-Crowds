@@ -43,7 +43,7 @@ class CreateEvent extends React.Component{
         return (
           <div className="session-form">
             <h2>Create a climbing session!</h2>
-            <p>
+            <p style="font: sans-serif">
               1000s of strangers across the world have climbed together. Create
               an account and you'll be on your way to joining the community
             </p>
