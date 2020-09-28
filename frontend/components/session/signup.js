@@ -46,7 +46,7 @@ class Signup extends React.Component {
                
             <div className="session-form-signup">
                 <h2>Join for climbing</h2>
-                <p>1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community</p>
+                <p className="p">1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community!!</p>
                 <form className="wrapper">
                     
                         <input 

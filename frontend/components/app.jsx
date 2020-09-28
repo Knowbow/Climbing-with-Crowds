@@ -10,25 +10,27 @@ import EventsContainer from './events/events_container';
 import EventContainer from './event/event_container';
 import CreateContainer from './create/create_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_utils';
+import ProfileContainer from './profile/profile_container';
 import event_container from './event/event_container';
 
 
 const App = () => (
-    <div className="page-container">
-        <NavbarContainer />
-        <Switch>
-            <Route exact path="/" component={HomeContainer} />
-            <AuthRoute exact path="/signup" component={SignupContainer} />
-            <AuthRoute exact path="/login" component={LoginContainer} />
-            <AuthRoute exact path="/guest" component={GuestContainer} />
-            <ProtectedRoute exact path="/create" component={CreateContainer} />
-            <Route exact path="/events" component={EventsContainer} />
-            <Route exact path="/events/:eventId" component={EventContainer} />
+  <div className="page-container">
+    <NavbarContainer />
+    <Switch>
+      <Route exact path="/" component={HomeContainer} />
+      <AuthRoute exact path="/signup" component={SignupContainer} />
+      <AuthRoute exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/guest" component={GuestContainer} />
+      <ProtectedRoute exact path="/create" component={CreateContainer} />
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+      <Route exact path="/events" component={EventsContainer} />
+      <Route exact path="/events/:eventId" component={EventContainer} />
 
-            <Redirect to="/" />
-        </Switch>
-        <FooterContainer />
-    </div>
-)
+      <Redirect to="/" />
+    </Switch>
+    <FooterContainer />
+  </div>
+);
 
 export default App;

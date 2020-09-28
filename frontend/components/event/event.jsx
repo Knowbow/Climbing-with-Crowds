@@ -8,11 +8,11 @@ class Event extends React.Component {
     }
     componentDidMount(){
        // let id = this.props.requestEvent(1);
-        console.log(this.props.location.state.id)
+        //console.log(this.props.location.state.id)
     }
 
     intro() {
-        console.log("22")
+        
         return (
             <div className="events-title">
                 <h2>Good Conversations</h2>
@@ -36,79 +36,106 @@ class Event extends React.Component {
 
     signUpButton() {
         return (
-            <div >
-                <button className="event-signup">SIGN ME UP</button>
-            </div>
+          <div>
+            <Link
+              to={{
+                pathname: `/profile`,
+                state: {
+                  id: this.props.location.state.id,
+                },
+              }}
+            >
+              <button className="event-signup">SIGN ME UP</button>
+            </Link>
+          </div>
         );
+        
     }
     
     eventData(){
         const seed = [
-            {
-                city_name: "San Francisco",
-                id: 1,
-                name: "Hyori",
-                date: "Sunday, Aug 23",
-                time: "2-4PM",
-                location: "Online Zoom"   
-            },
-            {
-                city_name: "San Francisco",
-                id: 1,
-                name: "Rain",
-                date: "Monday, Aug 24",
-                time: "4-6PM",
-                location: "Online Zoom"
-            },
-            {
-                city_name: "San Francisco",
-                id: 1,
-                name: "Yoo",
-                date: "Tuesday, Aug 25",
-                time: "6-8PM",
-                location: "Online Zoom"
-            },
-            {
-                city_name: "New York",
-                id: 1,
-                name: "Joy",
-                date: "Saturday, Aug 22",
-                time: "3-5PM",
-                location: "Online Zoom"
-            },
-            {
-               city_name: "New York",
-                id: 2,
-                name: "Eunji",
-                date: "Saturday, Aug 22",
-                time: "3-5pm",
-                location: "Sportrock"
-            },
-            {
-                city_name: "Washington DC ",
-                id: 3,
-                name: "Jongkook",
-                date: "Friday, Aug 7",
-                time: "4-6pm",
-                location: "24 hour fitness"
-
-            },
-
-        ]
+          {
+            city_name: "San Francisco",
+            id: 1,
+            name: "Hyori",
+            date: "Sunday, Aug 23",
+            time: "2-4PM",
+            location: "Online Zoom",
+            seats: "3",
+          },
+          {
+            city_name: "San Francisco",
+            id: 1,
+            name: "Rain",
+            date: "Monday, Aug 24",
+            time: "4-6PM",
+            location: "Online Zoom",
+            seats: "many",
+          },
+          {
+            city_name: "San Francisco",
+            id: 1,
+            name: "Yoo",
+            date: "Tuesday, Aug 25",
+            time: "6-8PM",
+            location: "Online Zoom",
+            seats: "5",
+          },
+          {
+            city_name: "New York",
+            id: 1,
+            name: "Joy",
+            date: "Saturday, Aug 22",
+            time: "3-5PM",
+            location: "Online Zoom",
+            seats: "many",
+          },
+          {
+            city_name: "New York",
+            id: 2,
+            name: "Eunji",
+            date: "Saturday, Aug 22",
+            time: "3-5pm",
+            location: "Sportrock",
+            seats: "4",
+          },
+          {
+            city_name: "Washington DC ",
+            id: 3,
+            name: "Jongkook",
+            date: "Friday, Aug 7",
+            time: "4-6pm",
+            location: "24 hour fitness",
+            seats: "many",
+          },
+        ];
         return (
-            
-            <div className="event-data-container">
-                <ul>
-                    <li className="event-card-host">Join {seed[this.props.location.state.id].name} For Climbing</li>
-                    <li className="event-card-datetime">📅 {seed[this.props.location.state.id].date}</li>
-                    <li className="event-card-datetime">⏰ {seed[this.props.location.state.id].time}</li>
-                    <li className="event-card-location">📍 {seed[this.props.location.state.id].location}</li>
-                    <li className="event-card-location">🗺 {seed[this.props.location.state.id].city_name}</li>
-                    <li className="event-card-location">🗣 https://climbing-with-crowds.herokuapp.com/#/events/</li>
-                    <li className="event-card-seats">There are many seats left!</li>
-                </ul>
-            </div>
-        )
+          <div className="event-data-container">
+            <ul>
+              <li className="event-card-host">
+                Join {seed[this.props.location.state.id].name} For Climbing
+              </li>
+              <li className="event-card-datetime">
+                📅 {seed[this.props.location.state.id].date}
+              </li>
+              <li className="event-card-datetime">
+                ⏰ {seed[this.props.location.state.id].time}
+              </li>
+              <li className="event-card-location">
+                📍 {seed[this.props.location.state.id].location}
+              </li>
+              <li className="event-card-location">
+                🗺 {seed[this.props.location.state.id].city_name}
+              </li>
+              <li className="event-card-location">
+                🗣 https://climbing-with-crowds.herokuapp.com/#/events/
+              </li>
+              <li className="event-card-seats">
+                There are {seed[this.props.location.state.id].seats} seats left!
+              </li>
+            </ul>
+          </div>
+        );
     }
 
     hostInfo(){

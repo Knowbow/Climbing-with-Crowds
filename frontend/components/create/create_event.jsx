@@ -17,7 +17,7 @@ class CreateEvent extends React.Component{
             time: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log('hi')
+        
     }
 
     handleInput(type) {
@@ -27,7 +27,7 @@ class CreateEvent extends React.Component{
     }
 
     handleSubmit(e) {
-      console.log("omg");
+      
       e.preventDefault();
       const formEvent = Object.assign({}, this.state);
       this.props.createEvent(formEvent);
@@ -43,7 +43,7 @@ class CreateEvent extends React.Component{
         return (
           <div className="session-form">
             <h2>Create a climbing session!</h2>
-            <p style="font-size:40px">
+            <p className='p'>
               1000s of strangers across the world have climbed together. Create
               an account and you'll be on your way to joining the community!!
             </p>

@@ -110,8 +110,8 @@ var receiveEvent = function receiveEvent(event) {
 };
 var createEvent = function createEvent(formEvent) {
   return function (dispatch) {
-    console.log("event action page"); // debugger
-
+    //console.log("event action page");
+    // debugger
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__["createEvent"](formEvent).then(function (event) {
       // debugger
       return dispatch(receiveEvent(event));
@@ -132,7 +132,7 @@ var requestEvent = function requestEvent(id) {
 /*!*************************************!*\
   !*** ./frontend/actions/session.js ***!
   \*************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, clearErrors, receiveErrors, createNewUser, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, clearErrors, receiveErrors, createNewUser, login, logout, fetchUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,6 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNewUser", function() { return createNewUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
 /* harmony import */ var _util_session_api_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_utils */ "./frontend/util/session_api_utils.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -199,6 +200,13 @@ var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_utils__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
       return dispatch(logoutCurrentUser());
+    });
+  };
+};
+var fetchUser = function fetchUser() {
+  return function (dispatch) {
+    return ApiUtil.receiveUser().then(function (user) {
+      return dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -268,6 +276,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _event_event_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./event/event_container */ "./frontend/components/event/event_container.jsx");
 /* harmony import */ var _create_create_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./create/create_container */ "./frontend/components/create/create_container.jsx");
 /* harmony import */ var _util_route_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/route_utils */ "./frontend/util/route_utils.jsx");
+/* harmony import */ var _profile_profile_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./profile/profile_container */ "./frontend/components/profile/profile_container.jsx");
+
 
 
 
@@ -305,6 +315,10 @@ var App = function App() {
     exact: true,
     path: "/create",
     component: _create_create_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_utils__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
+    exact: true,
+    path: "/profile",
+    component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/events",
@@ -423,7 +437,6 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
       time: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    console.log('hi');
     return _this;
   }
 
@@ -439,7 +452,6 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      console.log("omg");
       e.preventDefault();
       var formEvent = Object.assign({}, this.state);
       this.props.createEvent(formEvent); //onChange={this.handleInput('name')}
@@ -460,7 +472,7 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a climbing session!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        style: "font-size:40px"
+        className: "p"
       }, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to joining the community!!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -575,14 +587,12 @@ var Event = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Event, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      // let id = this.props.requestEvent(1);
-      console.log(this.props.location.state.id);
+    value: function componentDidMount() {// let id = this.props.requestEvent(1);
+      //console.log(this.props.location.state.id)
     }
   }, {
     key: "intro",
     value: function intro() {
-      console.log("22");
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "events-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good Conversations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "They're hard to find."));
@@ -599,9 +609,16 @@ var Event = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "signUpButton",
     value: function signUpButton() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
+        to: {
+          pathname: "/profile",
+          state: {
+            id: this.props.location.state.id
+          }
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "event-signup"
-      }, "SIGN ME UP"));
+      }, "SIGN ME UP")));
     }
   }, {
     key: "eventData",
@@ -612,42 +629,48 @@ var Event = /*#__PURE__*/function (_React$Component) {
         name: "Hyori",
         date: "Sunday, Aug 23",
         time: "2-4PM",
-        location: "Online Zoom"
+        location: "Online Zoom",
+        seats: "3"
       }, {
         city_name: "San Francisco",
         id: 1,
         name: "Rain",
         date: "Monday, Aug 24",
         time: "4-6PM",
-        location: "Online Zoom"
+        location: "Online Zoom",
+        seats: "many"
       }, {
         city_name: "San Francisco",
         id: 1,
         name: "Yoo",
         date: "Tuesday, Aug 25",
         time: "6-8PM",
-        location: "Online Zoom"
+        location: "Online Zoom",
+        seats: "5"
       }, {
         city_name: "New York",
         id: 1,
         name: "Joy",
         date: "Saturday, Aug 22",
         time: "3-5PM",
-        location: "Online Zoom"
+        location: "Online Zoom",
+        seats: "many"
       }, {
         city_name: "New York",
         id: 2,
         name: "Eunji",
         date: "Saturday, Aug 22",
         time: "3-5pm",
-        location: "Sportrock"
+        location: "Sportrock",
+        seats: "4"
       }, {
         city_name: "Washington DC ",
         id: 3,
         name: "Jongkook",
         date: "Friday, Aug 7",
         time: "4-6pm",
-        location: "24 hour fitness"
+        location: "24 hour fitness",
+        seats: "many"
       }];
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-data-container"
@@ -665,7 +688,7 @@ var Event = /*#__PURE__*/function (_React$Component) {
         className: "event-card-location"
       }, "\uD83D\uDDE3 https://climbing-with-crowds.herokuapp.com/#/events/"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "event-card-seats"
-      }, "There are many seats left!")));
+      }, "There are ", seed[this.props.location.state.id].seats, " seats left!")));
     }
   }, {
     key: "hostInfo",
@@ -879,7 +902,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Sunday, Aug 23",
           time: "2-4pm",
           location: "Online Zoom",
-          url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg"
+          url: "https://wiki.d-addicts.com/images/thumb/b/be/Hyori.jpg/201px-Hyori.jpg",
+          seats: "3"
         }, {
           id: 1,
           location_id: 1,
@@ -888,7 +912,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Monday, Aug 24",
           time: "4-6pm",
           location: "Online Zoom",
-          url: "https://i.mydramalist.com/rxvggc.jpg"
+          url: "https://i.mydramalist.com/rxvggc.jpg",
+          seats: "MANY"
         }, {
           id: 2,
           location_id: 1,
@@ -897,7 +922,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Tuesday, Aug 25",
           time: "6-8pm",
           location: "Online Zoom",
-          url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg"
+          url: "https://s.yimg.com/uu/api/res/1.2/SjjOC0P4qIx8rPO7VAQT4Q--~B/aD0zMDA7dz00MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en_MY/News/YBrandCinemaOnline/7cn_yoosues00.jpg",
+          seats: "5"
         }]
       }, {
         city_name: "New York",
@@ -909,7 +935,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Saturday, Aug 22",
           time: "3-5pm",
           location: "Online Zoom",
-          url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg"
+          url: "http://asianwiki.com/images/8/8f/The_Liar_and_His_Lover-teaser2.jpg",
+          seats: "MANY"
         }, {
           id: 4,
           location_id: 2,
@@ -918,7 +945,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Saturday, Aug 22",
           time: "3-5pm",
           location: "Sportrock",
-          url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg"
+          url: "https://i.pinimg.com/736x/ee/87/d6/ee87d6b7a11c0cd9cf8706928e444a68.jpg",
+          seats: "4"
         }]
       }, {
         city_name: "Washington DC ",
@@ -930,7 +958,8 @@ var Events = /*#__PURE__*/function (_React$Component) {
           date: "Friday, Aug 7",
           time: "4-6pm",
           location: "24 hour fitness",
-          url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize"
+          url: "https://img.koreatimes.co.kr/upload/newsV2/images/201902/f70637f418a44964acdcd7d8ad8be285.jpg/dims/resize/740/optimize",
+          seats: "MANY"
         }]
       }];
       var renderCities = seed.map(function (city) {
@@ -964,7 +993,7 @@ var Events = /*#__PURE__*/function (_React$Component) {
           className: "loc"
         }, details.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "loc1"
-        }, "MANY SEATS LEFT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
+        }, details.seats, " SEATS LEFT!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
           to: {
             pathname: "/events/".concat(details.id),
             state: {
@@ -1055,13 +1084,13 @@ __webpack_require__.r(__webpack_exports__);
   var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/Knowbow/Climbing-with-Crowds",
     className: "btn"
-  }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
-    to: "/login"
-  }, "Link2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
-    to: "/guest"
-  }, "Link3"));
+  }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/tony-wu-76769286/",
+    className: "btn"
+  }, "Linkedin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://knowbow.github.io/",
+    className: "btn"
+  }, "Personal Site"));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "footer-bar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1320,6 +1349,9 @@ __webpack_require__.r(__webpack_exports__);
     to: "/events",
     className: "btn"
   }, "Climbing Times"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/profile",
+    className: "btn"
+  }, "Profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "btn",
     to: "/",
     onClick: logout
@@ -1387,6 +1419,254 @@ var mdtp = function mdtp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mstp, mdtp)(_nav_bar__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/profile/profile.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/profile/profile.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var Profile = /*#__PURE__*/function (_React$Component) {
+  _inherits(Profile, _React$Component);
+
+  var _super = _createSuper(Profile);
+
+  function Profile(props) {
+    var _this;
+
+    _classCallCheck(this, Profile);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      first: localStorage.getItem("first") ? JSON.parse(localStorage.getItem("first")) : 20,
+      second: localStorage.getItem("second") ? JSON.parse(localStorage.getItem("second")) : 20,
+      third: localStorage.getItem("third") ? JSON.parse(localStorage.getItem("third")) : 20,
+      fourth: localStorage.getItem("fourth") ? JSON.parse(localStorage.getItem("fourth")) : 20
+    };
+    return _this;
+  }
+
+  _createClass(Profile, [{
+    key: "intro",
+    value: function intro() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "one"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "header"
+      }, "Welcome back!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "subheader"
+      }, "What is happening today?"));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      debugger;
+
+      if (this.state.first == 20 && this.props.location.state) {
+        this.setState({
+          first: this.props.location.state.id
+        });
+        localStorage.setItem("first", JSON.stringify(this.props.location.state.id));
+      } else if (this.state.second == 20 && this.props.location.state) {
+        this.setState({
+          second: this.props.location.state.id
+        });
+        localStorage.setItem("second", JSON.stringify(this.props.location.state.id));
+      } else if (this.state.third == 20 && this.props.location.state) {
+        this.setState({
+          third: this.props.location.state.id
+        });
+        localStorage.setItem("third", JSON.stringify(this.props.location.state.id));
+      } else if (this.state.fourth == 20 && this.props.location.state) {
+        debugger;
+        this.setState({
+          fourth: this.props.location.state.id
+        });
+        localStorage.setItem("fourth", JSON.stringify(this.props.location.state.id));
+      }
+    }
+  }, {
+    key: "body",
+    value: function body() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "events-body-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "events-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Here are the following events you have signed up for")));
+    }
+  }, {
+    key: "eventData",
+    value: function eventData(eventID) {
+      var seed = [{
+        city_name: "San Francisco",
+        id: 0,
+        name: "Hyori",
+        date: "Sunday, Aug 23",
+        time: "2-4PM",
+        location: "Online Zoom",
+        seats: "3"
+      }, {
+        city_name: "San Francisco",
+        id: 1,
+        name: "Rain",
+        date: "Monday, Aug 24",
+        time: "4-6PM",
+        location: "Online Zoom",
+        seats: "many"
+      }, {
+        city_name: "San Francisco",
+        id: 2,
+        name: "Yoo",
+        date: "Tuesday, Aug 25",
+        time: "6-8PM",
+        location: "Online Zoom",
+        seats: "5"
+      }, {
+        city_name: "New York",
+        id: 3,
+        name: "Joy",
+        date: "Saturday, Aug 22",
+        time: "3-5PM",
+        location: "Online Zoom",
+        seats: "many"
+      }, {
+        city_name: "New York",
+        id: 4,
+        name: "Eunji",
+        date: "Saturday, Aug 22",
+        time: "3-5pm",
+        location: "Sportrock",
+        seats: "4"
+      }, {
+        city_name: "Washington DC ",
+        id: 5,
+        name: "Jongkook",
+        date: "Friday, Aug 7",
+        time: "4-6pm",
+        location: "24 hour fitness",
+        seats: "many"
+      }];
+
+      if (eventID != 20 && eventID != null) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "event-data-container1"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-host"
+        }, seed[eventID].name, "'s climbing event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-datetime"
+        }, "\uD83D\uDCC5 ", seed[eventID].date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-datetime"
+        }, "\u23F0 ", seed[eventID].time), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-location"
+        }, "\uD83D\uDCCD ", seed[eventID].location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-location"
+        }, "\uD83D\uDDFA ", seed[eventID].city_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "event-card-location"
+        }, "\uD83D\uDDE3 https://climbing-with-crowds.herokuapp.com/#/events/")));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
+    }
+  }, {
+    key: "events",
+    value: function events() {
+      if (this.props.location.state || this.state.first != 20) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "events-body-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "events-body"
+        }, this.state.first));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hi");
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "event-pic1"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "e-pic1",
+        src: "https://climbcityrock.com/images/homepage-header-2-2020.jpg"
+      })), this.intro(), this.body(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profileEvents"
+      }, this.eventData(this.state.first), this.eventData(this.state.second), this.eventData(this.state.third), this.eventData(this.state.fourth)));
+    }
+  }]);
+
+  return Profile;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Profile);
+
+/***/ }),
+
+/***/ "./frontend/components/profile/profile_container.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/profile/profile_container.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _profile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile */ "./frontend/components/profile/profile.jsx");
+/* harmony import */ var _actions_session__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session */ "./frontend/actions/session.js");
+
+
+
+
+
+
+var mstp = function mstp(state) {
+  return {
+    currentUser: state.session.currentUser
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchUser: function fetchUser(id) {
+      return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_3__["fetchUser"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mstp, mdtp)(_profile__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1631,7 +1911,9 @@ var Login = /*#__PURE__*/function (_React$Component) {
         className: "session-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hey stranger!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "p"
+      }, "It's good to have you back. Sign in here and sign up for your next climb!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1795,7 +2077,9 @@ var Signup = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-signup"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Join for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Join for climbing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "p"
+      }, "1000s of strangers across the world have climbed together. Create an account and you'll be on your way to join the community!!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -2050,10 +2334,23 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState;
+  var userId;
 
   switch (action.type) {
     case _actions_session__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+
+    case REMOVE_ATTENDEE:
+      newState = state;
+      userId = Object.keys(newState);
+      newState[userId[0]].events = action.attendee.events;
+      return newState;
+
+    case REMOVE_EVENT:
+      newState = state;
+      userId = Object.keys(newState);
+      newState[userId[0]].hosted_events = action.event.hosted_events;
 
     default:
       return state;
@@ -2101,7 +2398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchEvent", function() { return fetchEvent; });
 var createEvent = function createEvent(event) {
-  console.log("event api util");
+  //console.log("event api util");
   return $.ajax({
     url: "/api/events",
     method: "POST",
@@ -2181,7 +2478,7 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withR
 /*!********************************************!*\
   !*** ./frontend/util/session_api_utils.js ***!
   \********************************************/
-/*! exports provided: login, signup, logout */
+/*! exports provided: login, signup, logout, receiveUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2189,6 +2486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -2214,6 +2512,12 @@ var logout = function logout() {
   return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
     method: 'DELETE',
     url: '/api/session'
+  });
+};
+var receiveUser = function receiveUser() {
+  return jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+    method: "GET",
+    url: "api/users"
   });
 };
 

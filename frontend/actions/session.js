@@ -45,3 +45,5 @@ export const logout = () => dispatch => (
         dispatch(logoutCurrentUser())
     ))
 )
+export const fetchUser = () => (dispatch) =>
+  ApiUtil.receiveUser().then((user) => dispatch(receiveCurrentUser(user)));

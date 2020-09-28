@@ -1,5 +1,5 @@
 export const createEvent = (event) => {
-    console.log("event api util");
+    //console.log("event api util");
     
     return $.ajax({
         url: "/api/events",

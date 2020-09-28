@@ -2,13 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
-    const display =  (
-            <div>
-            <a href="https://github.com/Knowbow/Climbing-with-Crowds" className="btn">Github</a>
-                <Link className="btn" to="/login">Link2</Link>
-                <Link className="btn" to="/guest">Link3</Link>
-            </div>
-        );
+    const display = (
+      <div>
+        <a
+          href="https://github.com/Knowbow/Climbing-with-Crowds"
+          className="btn"
+        >
+          Github
+        </a>
+        <a href="https://www.linkedin.com/in/tony-wu-76769286/" className="btn">
+          Linkedin
+        </a>
+        <a href="https://knowbow.github.io/" className="btn">
+          Personal Site
+        </a>
+      </div>
+    );
     return (
         <footer className="footer-bar">
             

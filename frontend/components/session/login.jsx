@@ -45,7 +45,7 @@ class Login extends React.Component {
             <div className="session-form">
             
                 <h2>Hey stranger!</h2>
-                <p>It's good to have you back. Sign in here and sign up for your next climb!</p>
+                <p className='p'>It's good to have you back. Sign in here and sign up for your next climb!</p>
                 <form className="signup">
                         <input
                             type="text"
