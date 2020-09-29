@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { HashLink as Link } from "react-router-hash-link";
 import {createEvent} from '../../actions/event_actions'
 
 class CreateEvent extends React.Component{
@@ -43,7 +43,7 @@ class CreateEvent extends React.Component{
         return (
           <div className="session-form">
             <h2>Create a climbing session!</h2>
-            <p className='p'>
+            <p className="p">
               1000s of strangers across the world have climbed together. Create
               an account and you'll be on your way to joining the community!!
             </p>
@@ -97,10 +97,16 @@ class CreateEvent extends React.Component{
                 placeholder="Description of event"
                 className="session-form-sign"
               />
-
-              <button className="sessionbtn" onClick={this.handleSubmit}>
-                Create Event
-              </button>
+              <Link
+                to={{
+                  pathname: `/profile`,
+                  
+                }}
+              >
+                <button className="sessionbtn" >
+                  Create Event
+                </button>
+              </Link>
             </form>
           </div>
         );

@@ -7,13 +7,18 @@ export default ({ currentUser, logout }) => {
         <a
           href="https://github.com/Knowbow/Climbing-with-Crowds"
           className="btn"
+          target="_blank"
         >
           Github
         </a>
-        <a href="https://www.linkedin.com/in/tony-wu-76769286/" className="btn">
+        <a
+          href="https://www.linkedin.com/in/tony-wu-76769286/"
+          target="_blank"
+          className="btn"
+        >
           Linkedin
         </a>
-        <a href="https://knowbow.github.io/" className="btn">
+        <a href="https://knowbow.github.io/" className="btn" target="_blank">
           Personal Site
         </a>
       </div>

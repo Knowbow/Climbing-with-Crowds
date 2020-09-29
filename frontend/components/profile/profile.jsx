@@ -29,7 +29,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-      debugger
+      
     if (this.state.first == 20 && this.props.location.state) {
       this.setState({
         first: this.props.location.state.id,
@@ -55,7 +55,7 @@ class Profile extends React.Component {
         JSON.stringify(this.props.location.state.id)
       );
     } else if (this.state.fourth == 20 && this.props.location.state) {
-        debugger
+        
       this.setState({
         fourth: this.props.location.state.id,
       });
@@ -67,6 +67,17 @@ class Profile extends React.Component {
   }
 
   body() {
+      if (this.state.first == 20){
+          return (
+            <div className="events-body-container">
+              <div className="events-body">
+                <h3>Climbing With Friends is climbing, with company</h3>
+                <p>You have no signed up for any events</p>
+              </div>
+            </div>
+          );
+      }
+      
     return (
       <div className="events-body-container">
         <div className="events-body">
@@ -161,9 +172,7 @@ class Profile extends React.Component {
       </div>
     );}
     else {
-        return (
-        <div></div>
-        )
+        return <div className="event-data-container2"></div>;
     }
   }
 
