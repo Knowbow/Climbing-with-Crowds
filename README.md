@@ -4,11 +4,25 @@ Welcome! Climbing with crowds is a site created in the vision of Tea with Strang
 https://climbing-with-crowds.herokuapp.com/
 
 ## Technologies implemented
-The site was built from scratch, utilizing Ruby on Rails and PostgreSQL for the backend and Javascript with React/Redux on the frontend.
+Climbing with Crowds was built using:
+* JavaScript 8
+* React 16.8
+* Redux 4.0.1
+* Ruby on Rails 5.2.4
+* PostgreSQL 2.2.2
+* webpack 4.32.2
+
+## Background and Overview
+Climbing with Friends is a listing app aimed at allowing users to create and join rock climbing events with other users on the website.
+
+[Live Link](https://climbing-with-crowds.herokuapp.com/)
+![GitHub Logo](./climb-home.png)
 
 ## Features
-- Users are able to login/signup or use a demo login to complete encrypted user authentication.
-``` def create
+### Authorization
+Climbing with Crowds has backend authentization and persistent user state. As a user logs in, a cookie is used to keep track of their login in case they leave the website. An email address is saved to the backend and model level auth is used to ensure an email and password is unique.
+```JavaScript
+ def create
     @user = User.find_by_credentials(
       params[:user][:name],
       params[:user][:password]
@@ -24,9 +38,12 @@ The site was built from scratch, utilizing Ruby on Rails and PostgreSQL for the 
   end 
 
 ```
-- Users are able to view an index page that shows a list of cities and all the events that scheduled to happen.
+### Event listings
+Users are able to view an index page that shows a list of cities and all the events that scheduled to happen.  
+
+
 ![GitHub Logo](./index.png)
-```
+```JavaScript
 export const requestEvent = id => dispatch => (
     APIUtil.fetchEvent(id).then(
         event => (
@@ -38,9 +55,12 @@ export const requestEvent = id => dispatch => (
 - User can view specific event information and logged in users are able to join any existing event.
 ![GitHub Logo](./show.png)
 
-- User can host an event by creating an event with relevant event details.
+### Event joining
+User may signup for an event by clicking the sign me up button. Once a user has signed up for an event, it will appear in their dash board.
+
+![GitHub Logo](./dashboard.png)
 
 ## Features planned
-- User dashboard for users to view their past and upcoming events.
+
 - Google maps api for users to better understand the meetup location.
 
