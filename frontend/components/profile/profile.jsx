@@ -71,7 +71,7 @@ class Profile extends React.Component {
           return (
             <div className="events-body-container">
               <div className="events-body">
-                <h3>Climbing With Friends is climbing, with company</h3>
+                <h3>Climbing with Friends is climbing, with company</h3>
                 <p>You have not signed up for any events!</p>
               </div>
             </div>
