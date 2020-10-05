@@ -518,11 +518,11 @@ var CreateEvent = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.description,
         onChange: this.handleInput("description"),
-        placeholder: "Description of event",
+        placeholder: "Description of event!",
         className: "session-form-sign"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_1__["HashLink"], {
         to: {
-          pathname: "/profile"
+          pathname: "/"
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sessionbtn"
@@ -752,16 +752,6 @@ var Event = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Event);
-
-function Map(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GoogleMap, {
-    defaultZoom: 10,
-    defaultCenter: {
-      lat: 40.7591704,
-      lng: -74.0392709
-    }
-  });
-}
 
 /***/ }),
 
@@ -1530,14 +1520,14 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           className: "events-body-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "events-body"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You have no signed up for any events")));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing with Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You have not signed up for any events!")));
       }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "events-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "events-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Here are the following events you have signed up for")));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Climbing With Friends is climbing, with company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Here are the following events you have signed up for!")));
     }
   }, {
     key: "eventData",

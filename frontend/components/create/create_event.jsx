@@ -94,12 +94,12 @@ class CreateEvent extends React.Component{
                 type="text"
                 value={this.state.description}
                 onChange={this.handleInput("description")}
-                placeholder="Description of event"
+                placeholder="Description of event!"
                 className="session-form-sign"
               />
               <Link
                 to={{
-                  pathname: `/profile`,
+                  pathname: `/`,
                   
                 }}
               >
