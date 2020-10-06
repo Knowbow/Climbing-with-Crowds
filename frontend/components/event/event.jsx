@@ -16,7 +16,7 @@ class Event extends React.Component {
         return (
             <div className="events-title">
                 <h2>Good Conversations</h2>
-                <p>They're hard to find.</p>
+                <p>They are hard to find.</p>
 
             </div>
         )
